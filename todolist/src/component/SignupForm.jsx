@@ -20,14 +20,14 @@ const SignupForm = () => {
         setPasswordChecking(e.target.value);
     } // 비밀번호확인 인풋값 변경함수
 
-    const sendContext = {
+    const sendContents = {
         email : `${identification}`,
         password : `${password}` 
     }
 
     const signupFunction = async (e) => { // 회원가입 시켜주는 함수 그후 signin 페이지 이동
         e.preventDefault();
-        const res = await sendForSignupFunction(sendContext); // res 를 {status} 로 구조분해할당 가능
+        const res = await sendForSignupFunction(sendContents); // res 를 {status} 로 구조분해할당 가능
         if ( res.status === 201 ) { // res.status 로 쓴 부분을 위에서 구조분해할당 했다면 status 로 받기 가능
             navigate("/signin");
         }
