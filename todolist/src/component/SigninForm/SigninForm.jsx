@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { axiosAuthAPI } from '../api/Client';
+import { sendForSigninFunction } from '../../api/Auth';
 
 const SigninForm = () => {
     const navigate = useNavigate();
@@ -16,12 +16,15 @@ const SigninForm = () => {
       password : `${password}` 
     }
 
-    const signinFunction = async (e) => {
+    const signinFunction = async (e) => { // 이 함수는 SignupForm 에서 한 것처럼 api 폴더 내 Auth.jsx 파일로 따로 분리해둘 수 있음
       e.preventDefault();
-      const { status } = await axiosAuthAPI.post("/auth/signin", sendContents);
-      if ( status === 200 ) {
+      const res = await sendForSigninFunction(sendContents);
+      if ( res.status === 200 ) { // 꼭 써야할까? 고민해보기 어차피 sendForSigninFunction 가 try, catch 로 잡아내주지 않을까? 고민해보기
         navigate("/todo");
+        localStorage.setItem("accessToken", res.data.access_token); // JWT 로컬스토리지 저장
       }
+
+      // console.log(res);
     }
 
     const changeIdentificationValue = (e) => {

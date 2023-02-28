@@ -1,12 +1,12 @@
 import React from 'react'
-import SigninForm from '../component/SigninForm'
+import SigninForm from '../component/SigninForm/SigninForm'
 
 const Signin = () => {
   return (
-    <div>
-        <h1>Signin Page</h1>
-        <SigninForm/>  
-    </div>
+    <>
+      <h1>Signin Page</h1>
+      <SigninForm/>  
+    </>
   )
 }
 
