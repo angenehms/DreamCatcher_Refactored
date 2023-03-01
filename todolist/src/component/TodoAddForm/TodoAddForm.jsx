@@ -11,9 +11,7 @@ const TodoList = () => {
   } 
 
   const addTodoFunction = async () => { // 추가 버튼 누르면 서버에 Create 해주는 함수
-    const res = await axiosAuthAPI.post("/todos", {todo: `${addTodoInputValue}`});
-    // console.log(res);
-    // console.log(res.data.todo);
+    await axiosAuthAPI.post("/todos", {todo: `${addTodoInputValue}`});
   } 
 
   return (

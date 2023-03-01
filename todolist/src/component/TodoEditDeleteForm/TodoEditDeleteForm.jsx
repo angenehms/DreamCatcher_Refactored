@@ -1,17 +1,16 @@
 import React from 'react'
+import TodoEditDeleteFormTag from '../TodoEditDeleteFormTag/TodoEditDeleteFormTag'
 
-const TodoEditDeleteForm = () => {
+const TodoEditDeleteForm = ({todoContents}) => {
   return (
+
     <ul>
-        <li>
-            <label>
-                <input type="checkbox"/>
-                <span>Assignment</span>
-            </label>
-            <button>수정</button>
-            <button>삭제</button>
-        </li>
+      {todoContents.map((whatTodo, index) => { 
+        // console.log(whatTodo);
+        return <TodoEditDeleteFormTag key={index} whatTodo={whatTodo}/>
+      })}
     </ul>
+
   )
 }
 
