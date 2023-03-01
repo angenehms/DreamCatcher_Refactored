@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { axiosAuthAPI } from '../api/Client'
+import { sendForReadTodoFunction } from '../api/Auth'
 import TodoAddForm from '../component/TodoAddForm/TodoAddForm'
 import TodoEditDeleteForm from '../component/TodoEditDeleteForm/TodoEditDeleteForm'
 import TodoSubmitCancelForm from '../component/TodoSubmitCancelForm/TodoSubmitCancelForm'
@@ -9,7 +9,7 @@ const Todo = () => {
   const [todoContents, setTodoContents] = useState([]);
 
   const readTodoFunction = async () => {
-    const res = await axiosAuthAPI.get("/todos");
+    const res = await sendForReadTodoFunction();
     const lists = res.data.map(list => list.todo);
     // console.log(res);
     // console.log(lists);
@@ -17,7 +17,7 @@ const Todo = () => {
     // console.log(todoContents);
   }
 
-  useEffect(() => {readTodoFunction()}, []);
+  useEffect(() => {readTodoFunction()}, [todoContents]);
   
   return (
     <>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { axiosAuthAPI } from '../../api/Client';
+import { sendForAddTodoFunction } from '../../api/Auth';
 
 const TodoList = () => {
 
@@ -11,7 +11,7 @@ const TodoList = () => {
   } 
 
   const addTodoFunction = async () => { // 추가 버튼 누르면 서버에 Create 해주는 함수
-    await axiosAuthAPI.post("/todos", {todo: `${addTodoInputValue}`});
+    await sendForAddTodoFunction({todo: `${addTodoInputValue}`});
   } 
 
   return (
