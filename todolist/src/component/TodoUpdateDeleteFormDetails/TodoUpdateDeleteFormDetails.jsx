@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { sendForDeleteTodoFunction, sendForEditTodoFunction } from '../../api/Auth'
 
-const TodoEditDeleteFormTag = ({listId, whatTodo, isChecked, readTodoFunction}) => {
+const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunction}) => {
 
     const deleteTodoFunction = async () => { // 투두 삭제함수
        await sendForDeleteTodoFunction(listId);
@@ -67,4 +67,4 @@ const TodoEditDeleteFormTag = ({listId, whatTodo, isChecked, readTodoFunction}) 
     )
 }
 
-export default TodoEditDeleteFormTag
+export default TodoUpdateDeleteFormDetails

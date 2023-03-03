@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { sendForAddTodoFunction } from '../../api/Auth';
 
-const TodoList = ({readTodoFunction}) => {
+const TodoCreateForm = ({readTodoFunction}) => {
 
   const [addTodoInputValue, setAddTodoInputValue] = useState(""); // 투두 추가
 
@@ -23,4 +23,4 @@ const TodoList = ({readTodoFunction}) => {
   )
 }
 
-export default TodoList
+export default TodoCreateForm
