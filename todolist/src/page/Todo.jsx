@@ -18,7 +18,6 @@ const Todo = () => {
   useEffect(() => {readTodoFunction()}, []);
   
 
-
   return (
     <>
       <h1>Todo List</h1>

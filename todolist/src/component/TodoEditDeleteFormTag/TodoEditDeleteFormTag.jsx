@@ -24,11 +24,15 @@ const TodoEditDeleteFormTag = ({listId, whatTodo, isChecked, readTodoFunction}) 
         setEditContents(e.target.value);
     }
 
-    // const [isDone, setIsDone] = useState(isChecked);
+    const [isDone, setIsDone] = useState(isChecked);
+
+    const isCheckedOnChangeFunction = (e) => {
+        setIsDone(e.target.checked);
+    }
 
     const sendContentsForEdit = {
         todo : `${editContents}`,
-        isCompleted : isChecked
+        isCompleted : isDone
     }
 
     const editTodoFunction = async () => {
@@ -43,7 +47,7 @@ const TodoEditDeleteFormTag = ({listId, whatTodo, isChecked, readTodoFunction}) 
 
             <label>
 
-                <input type="checkbox"/>
+                <input type="checkbox" checked={isDone} onChange={isCheckedOnChangeFunction}/>
                 {openEditInput ? 
                 <input type="text" value={editContents} onChange={editContentsOnChangeFunction}/> 
                 : <span>{whatTodo}</span>}
