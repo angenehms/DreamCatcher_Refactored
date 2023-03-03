@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
-import { sendForDeleteTodoFunction } from '../../api/Auth'
+import { sendForDeleteTodoFunction, sendForEditTodoFunction } from '../../api/Auth'
 
-const TodoEditDeleteFormTag = ({whatTodo, listId, readTodoFunction}) => {
+const TodoEditDeleteFormTag = ({listId, whatTodo, isChecked, readTodoFunction}) => {
 
     const deleteTodoFunction = async () => { // 투두 삭제함수
-       await sendForDeleteTodoFunction(listId)
+       await sendForDeleteTodoFunction(listId);
        readTodoFunction();
         // 삭제 이후 서버에서 리스트가 삭제된 데이터를 다시 가지고 와야하므로 한 번더 read 렌더링을 시킨다.
     }
 
     const [openEditInput, setOpenEditInput] = useState(false);
-    const [editContents, setEditContents] = useState(whatTodo)
+    const [editContents, setEditContents] = useState(whatTodo);
     
-    const open = () => {
+    const open = () => { // 수정버튼 클릭시 인풋창으로 변하게 하기 위한 함수 (삼항연산자에 활용)
         setOpenEditInput(true);
     }
-    const close = () => {
+    const close = () => { // 취소버튼 클릭시 스팬테그로 변하게 하기위한 함수 (삼항연산자에 활용)
         setOpenEditInput(false);
         setEditContents(whatTodo);
     }
@@ -24,9 +24,23 @@ const TodoEditDeleteFormTag = ({whatTodo, listId, readTodoFunction}) => {
         setEditContents(e.target.value);
     }
 
+    // const [isDone, setIsDone] = useState(isChecked);
+
+    const sendContentsForEdit = {
+        todo : `${editContents}`,
+        isCompleted : isChecked
+    }
+
+    const editTodoFunction = async () => {
+        await sendForEditTodoFunction(listId, sendContentsForEdit);
+        readTodoFunction();
+        setOpenEditInput(false);
+    }
+
   return (
 
         <li>
+
             <label>
 
                 <input type="checkbox"/>
@@ -37,7 +51,7 @@ const TodoEditDeleteFormTag = ({whatTodo, listId, readTodoFunction}) => {
             </label>
 
             {openEditInput ? 
-            <button>제출</button> 
+            <button onClick={editTodoFunction}>제출</button> 
             : <button data-testid="modify-button" onClick={open}>수정</button>}
 
             {openEditInput ? 

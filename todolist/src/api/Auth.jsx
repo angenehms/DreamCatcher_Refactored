@@ -58,4 +58,16 @@ export const sendForDeleteTodoFunction = async (id) => {
         console.log(error);
         alert("콘솔창을 확인해주세요!");
     }
-} // component/TodoEditDeleteForm/TodoEditDeleteForm.jsx 에 위치
+} // component/TodoEditDeleteFormTag/TodoEditDeleteFormTag.jsx 에 위치
+
+export const sendForEditTodoFunction = async (id, body) => {
+    try {
+        const res = await axiosAuthAPI.put(`/todos/${id}`, body);
+        return res;
+    }
+
+    catch (error) {
+        console.log(error);
+        alert("콘솔창을 확인해주세요!");
+    }
+} // component/TodoEditDeleteFormTag/TodoEditDeleteFormTag.jsx 에 위치
