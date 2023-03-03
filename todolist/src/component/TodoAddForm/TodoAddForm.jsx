@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { sendForAddTodoFunction } from '../../api/Auth';
 
-const TodoList = () => {
+const TodoList = ({readTodoFunction}) => {
 
   const [addTodoInputValue, setAddTodoInputValue] = useState(""); // 투두 추가
 
@@ -12,12 +12,13 @@ const TodoList = () => {
 
   const addTodoFunction = async () => { // 추가 버튼 누르면 서버에 Create 해주는 함수
     await sendForAddTodoFunction({todo: `${addTodoInputValue}`});
+    readTodoFunction();
   } 
 
   return (
     <>
-      <input type="text" value={addTodoInputValue} onChange={changeAddTodoValue}/>
-      <button onClick={addTodoFunction}>추가</button>
+      <input type="text" data-testid="new-todo-input" value={addTodoInputValue} onChange={changeAddTodoValue}/>
+      <button data-testid="new-todo-add-button" onClick={addTodoFunction}>추가</button>
     </>
   )
 }

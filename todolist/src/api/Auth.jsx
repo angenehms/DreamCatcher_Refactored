@@ -46,11 +46,11 @@ export const sendForReadTodoFunction = async () => {
         console.log(error);
         alert("콘솔창을 확인해주세요!");
     }
-}
+} // page/Todo/Todo.jsx 에 위치
 
-export const sendForDeleteTodoFunction = async (body) => {
+export const sendForDeleteTodoFunction = async (id) => {
     try {
-        const res = await axiosAuthAPI.delete("/todos/:id", body);
+        const res = await axiosAuthAPI.delete(`/todos/${id}`);
         return res;
     }
 
@@ -58,4 +58,4 @@ export const sendForDeleteTodoFunction = async (body) => {
         console.log(error);
         alert("콘솔창을 확인해주세요!");
     }
-}
+} // component/TodoEditDeleteForm/TodoEditDeleteForm.jsx 에 위치

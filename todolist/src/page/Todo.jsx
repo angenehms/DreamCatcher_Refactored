@@ -6,24 +6,25 @@ import TodoSubmitCancelForm from '../component/TodoSubmitCancelForm/TodoSubmitCa
 
 const Todo = () => {
 
-  const [todoContents, setTodoContents] = useState([]);
+  const [todoListInfo, setTodoListInfo] = useState([]);
 
   const readTodoFunction = async () => {
     const res = await sendForReadTodoFunction();
-    const lists = res.data.map(list => list.todo);
-    // console.log(res);
-    // console.log(lists);
-    setTodoContents(lists);
-    // console.log(todoContents);
+    //console.log('확인',res)
+    const listInfo = res.data;
+    // console.log(listInfo);
+    setTodoListInfo(listInfo);
   }
 
-  useEffect(() => {readTodoFunction()}, [todoContents]);
+  useEffect(() => {readTodoFunction()}, []);
   
+
+
   return (
     <>
       <h1>Todo List</h1>
-      <TodoAddForm/>
-      <TodoEditDeleteForm todoContents={todoContents}/>
+      <TodoAddForm readTodoFunction={readTodoFunction}/>
+      <TodoEditDeleteForm readTodoFunction={readTodoFunction} todoListInfo={todoListInfo}/>
       <TodoSubmitCancelForm/>
     </>
   )
