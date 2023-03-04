@@ -12,18 +12,18 @@ const SignupForm = () => {
 
     const changeIdentificationValue = (e) => {
         setIdentification(e.target.value);
-    } // 아이디 인풋값 변경함수
+    }; // 아이디 인풋값 변경함수
     const changePasswordValue = (e) => {
         setPassword(e.target.value);
-    } // 비밀번호 인풋값 변경함수
+    }; // 비밀번호 인풋값 변경함수
     const changePasswordChecking = (e) => {
         setPasswordChecking(e.target.value);
-    } // 비밀번호확인 인풋값 변경함수
+    }; // 비밀번호확인 인풋값 변경함수
 
     const sendContentsForSignup = {
         email : `${identification}`,
         password : `${password}` 
-    }
+    };
 
     const signupFunction = async (e) => { // 회원가입 시켜주는 함수 그후 signin 페이지 이동
         e.preventDefault();
@@ -33,7 +33,7 @@ const SignupForm = () => {
         }
 
         // console.log(res);
-;    }
+;    };
 
     const isEqualPassword = (password === passwordChecking); // 비밀번화 확인 일치여부
     const validityCheckFunction = () => { // 유효성검사 함수
@@ -42,7 +42,7 @@ const SignupForm = () => {
         } else {
             return false;
         } 
-    }
+    };
 
     const validityResult = validityCheckFunction(); // 유효성검사 결과값(불리언)
 
@@ -54,6 +54,6 @@ const SignupForm = () => {
       <button disabled={!validityResult} onClick={signupFunction}>Signup</button>
     </form>
   )
-}
+};
 
 export default SignupForm

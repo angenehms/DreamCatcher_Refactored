@@ -14,7 +14,7 @@ const SigninForm = () => {
     const sendContentsForSignin = {
       email : `${identification}`, 
       password : `${password}` 
-    }
+    };
 
     const signinFunction = async (e) => { // 이 함수는 SignupForm 에서 한 것처럼 api 폴더 내 Auth.jsx 파일로 따로 분리해둘 수 있음
       e.preventDefault();
@@ -25,14 +25,14 @@ const SigninForm = () => {
       }
 
       // console.log(res);
-    }
+    };
 
     const changeIdentificationValue = (e) => {
       setIdentification(e.target.value);
-    } // 아이디의 인풋값을 잡아내어 상태변경을 하기위한 함수
+    }; // 아이디의 인풋값을 잡아내어 상태변경을 하기위한 함수
     const changePasswordValue = (e) => {
       setPassword(e.target.value);
-    } // 패스워드의 인풋값을 잡아내어 상태변경을 하기위한 함수
+    }; // 패스워드의 인풋값을 잡아내어 상태변경을 하기위한 함수
 
   return (
     <form>
@@ -42,6 +42,6 @@ const SigninForm = () => {
       <button onClick={moveToSignupPageFunction}>Go to Signup</button>
     </form>
   )
-}
+};
 
 export default SigninForm

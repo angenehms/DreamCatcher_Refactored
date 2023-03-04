@@ -15,6 +15,6 @@ const TodoUpdateDeleteForm = ({todoListInfo, readTodoFunction}) => {
     </ul>
 
   )
-}
+};
 
 export default TodoUpdateDeleteForm

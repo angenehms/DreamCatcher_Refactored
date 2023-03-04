@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { sendForReadTodoFunction } from '../api/Auth'
+import SignoutForm from '../component/SignoutForm/SignoutForm'
 import TodoCreateForm from '../component/TodoCreateForm/TodoCreateForm'
 import TodoUpdateDeleteForm from '../component/TodoUpdateDeleteForm/TodoUpdateDeleteForm'
 
@@ -20,9 +21,13 @@ const Todo = () => {
   
   return (
     <>
+
       <h1>Todo List</h1>
+
       <TodoCreateForm readTodoFunction={readTodoFunction}/>
       <TodoUpdateDeleteForm readTodoFunction={readTodoFunction} todoListInfo={todoListInfo}/>
+      <SignoutForm/>
+      
     </>
   )
 }
