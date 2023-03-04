@@ -12,6 +12,7 @@ const TodoCreateForm = ({readTodoFunction}) => {
 
   const addTodoFunction = async () => { // 추가 버튼 누르면 서버에 Create 해주는 함수
     await sendForAddTodoFunction({todo: `${addTodoInputValue}`});
+    setAddTodoInputValue("");
     readTodoFunction();
   } 
 
