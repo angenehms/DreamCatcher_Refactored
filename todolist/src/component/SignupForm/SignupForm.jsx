@@ -35,7 +35,7 @@ const SignupForm = () => {
         // console.log(res);
 ;    };
 
-    const isEqualPassword = (password === passwordChecking); // 비밀번화 확인 일치여부
+    const isEqualPassword = (password === passwordChecking); // 비밀번호 확인 일치여부
     const validityCheckFunction = () => { // 유효성검사 함수
         if (identification.includes("@") && password.length >= 8 && isEqualPassword) {
             return true;
