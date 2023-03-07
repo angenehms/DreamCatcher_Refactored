@@ -36,9 +36,13 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
     };
 
     const editTodoFunction = async () => {
-        await sendForEditTodoFunction(listId, sendContentsForEdit);
-        readTodoFunction();
-        setOpenEditInput(false);
+        if ( editContents ) {
+            await sendForEditTodoFunction(listId, sendContentsForEdit);
+            readTodoFunction();
+            setOpenEditInput(false);
+        } else {
+             alert("수정할 내용을 입력해주세요!");
+        }
     };
 
   return (
@@ -59,7 +63,7 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
             : <button data-testid="modify-button" onClick={open}>Edit</button>}
 
             {openEditInput ? 
-            <button onClick={close}>취소</button> 
+            <button onClick={close}>Cancel</button> 
             : <button data-testid="delete-button" onClick={deleteTodoFunction}>Delete</button>}
 
         </li>

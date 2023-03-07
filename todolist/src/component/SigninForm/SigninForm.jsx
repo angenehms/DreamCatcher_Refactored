@@ -20,8 +20,8 @@ const SigninForm = () => {
       e.preventDefault();
       const res = await sendForSigninFunction(sendContentsForSignin);
       if ( res.status === 200 ) { // 꼭 써야할까? 고민해보기 어차피 sendForSigninFunction 가 try, catch 로 잡아내주지 않을까? 고민해보기
-        navigate("/todo");
         localStorage.setItem("accessToken", res.data.access_token); // JWT 로컬스토리지 저장
+        navigate("/todo");  
       }
 
       // console.log(res);

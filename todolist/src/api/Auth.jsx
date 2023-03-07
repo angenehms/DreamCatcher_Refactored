@@ -8,7 +8,7 @@ export const sendForSignupFunction = async (body) => {
 
     catch (error) {
         console.log(error);
-        alert("콘솔창을 확인해주세요!");
+        alert("sendForSignupFunction Error : 콘솔창을 확인해주세요!");
     }
 }
 
@@ -20,7 +20,7 @@ export const sendForSigninFunction = async (body) => {
 
     catch (error) {
         console.log(error);
-        alert("콘솔창을 확인해주세요!");
+        alert("sendForSigninFunction Error : 콘솔창을 확인해주세요!");
     }
 }
 
@@ -32,7 +32,7 @@ export const sendForAddTodoFunction = async (body) => {
 
     catch (error) {
         console.log(error);
-        alert("콘솔창을 확인해주세요!");
+        alert("sendForAddTodoFunction Error : 콘솔창을 확인해주세요!");
     }
 }
 
@@ -44,7 +44,7 @@ export const sendForReadTodoFunction = async () => {
 
     catch (error) {
         console.log(error);
-        alert("콘솔창을 확인해주세요!");
+        alert("sendForReadTodoFunction Error : 콘솔창을 확인해주세요!");
     }
 } // page/Todo/Todo.jsx 에 위치
 
@@ -56,7 +56,7 @@ export const sendForDeleteTodoFunction = async (id) => {
 
     catch (error) {
         console.log(error);
-        alert("콘솔창을 확인해주세요!");
+        alert("sendForDeleteTodoFunction Error : 콘솔창을 확인해주세요!");
     }
 } // component/TodoEditDeleteFormTag/TodoEditDeleteFormTag.jsx 에 위치
 
@@ -68,6 +68,6 @@ export const sendForEditTodoFunction = async (id, body) => {
 
     catch (error) {
         console.log(error);
-        alert("콘솔창을 확인해주세요!");
-    }
+        alert("sendForEditTodoFunction Error : 콘솔창을 확인해주세요!");
+    } // 수정 내용을 공백으로 보낸 제출한 뒤(Error 메세지 출력 후) 다시 수정 버튼을 누르면 기존 인풋값이 렌더링 되지 않고 공백으로 뜬다. (수정완료 : TodoUpdateDeleteFormDetails 에서 editTodoFunction 함수 if 문)
 } // component/TodoEditDeleteFormTag/TodoEditDeleteFormTag.jsx 에 위치
