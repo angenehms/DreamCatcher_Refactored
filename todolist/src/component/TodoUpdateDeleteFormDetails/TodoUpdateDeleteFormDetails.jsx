@@ -27,12 +27,16 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
     const [isDone, setIsDone] = useState(isChecked);
 
     const isCheckedOnChangeFunction = (e) => {
+        // console.log("isChecked", isChecked);
+        // console.log("e.target.checked", e.target.checked);
+        // console.log("isDone", isDone);
         setIsDone(e.target.checked);
+        editTodoFunction();
     };
 
     const sendContentsForEdit = {
         todo : `${editContents}`,
-        isCompleted : isDone
+        isCompleted : !isDone // 느낌표를 제거하면 할일 완료 체크 후 새로고침하면 업데이트가 안되는 현상이 일어난다.
     };
 
     const editTodoFunction = async () => {
