@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { sendForSigninFunction } from '../../api/Auth';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
 
 const SigninForm = () => {
     const navigate = useNavigate();
-    const moveToSignupPageFunction = () => {
-        navigate("/signup");
-    };
+    // const moveToSignupPageFunction = () => {
+    //     navigate("/signup");
+    // };
 
     const [identification, setIdentification] = useState("");
     const [password, setPassword] = useState("");
@@ -36,10 +40,17 @@ const SigninForm = () => {
 
   return (
     <form>
-      <input type="text" onChange={changeIdentificationValue}/>
-      <input type="password" onChange={changePasswordValue}/>
-      <button onClick={signinFunction}>Signin</button>
-      <button onClick={moveToSignupPageFunction}>Go to Signup</button>
+      <TextField label="Email Address" type="text" sx={{mt : 5}} required fullWidth name="email" autoComplete="email" onChange={changeIdentificationValue}/>
+      <TextField label="Password" type="password" sx={{mt : 1.5}} required fullWidth name="password" onChange={changePasswordValue}/>
+      <Button variant="contained" type="submit" sx={{mt : 3, mb : 2}} fullWidth onClick={signinFunction}>Signin</Button>
+      
+      <Grid container spacing={2}>
+        <Grid item xs></Grid>
+        <Grid item>
+          <Link href="/signup">Go To Signup</Link>
+        </Grid>
+      </Grid>
+      {/* <Button variant="contained" type="submit" fullWidth onClick={moveToSignupPageFunction}>Go to Signup</Button> */}
     </form>
   )
 };
