@@ -1,26 +1,26 @@
-import SigninPageImg1 from '../../img/SigninPageImg/planner1.jpg';
-import SigninPageImg2 from '../../img/SigninPageImg/planner2.jpg';
-import SigninPageImg3 from '../../img/SigninPageImg/planner3.jpg';
-import SigninPageImg4 from '../../img/SigninPageImg/planner4.jpg';
-import SigninPageImg5 from '../../img/SigninPageImg/planner5.jpg';
-import SigninPageImg6 from '../../img/SigninPageImg/planner6.jpg';
-import SigninPageImg7 from '../../img/SigninPageImg/planner7.jpg';
-import SigninPageImg8 from '../../img/SigninPageImg/planner8.jpg';
-import SigninPageImg9 from '../../img/SigninPageImg/planner9.jpg';
+import SigninPageImg01 from '../../img/SigninPageImg/planner01.jpg';
+import SigninPageImg02 from '../../img/SigninPageImg/planner02.jpg';
+import SigninPageImg03 from '../../img/SigninPageImg/planner03.jpg';
+import SigninPageImg04 from '../../img/SigninPageImg/planner04.jpg';
+import SigninPageImg05 from '../../img/SigninPageImg/planner05.jpg';
+import SigninPageImg06 from '../../img/SigninPageImg/planner06.jpg';
+import SigninPageImg07 from '../../img/SigninPageImg/planner07.jpg';
+import SigninPageImg08 from '../../img/SigninPageImg/planner08.jpg';
+import SigninPageImg09 from '../../img/SigninPageImg/planner09.jpg';
 import SigninPageImg10 from '../../img/SigninPageImg/planner10.jpg';
 import SigninPageImg11 from '../../img/SigninPageImg/planner11.jpg';
 import SigninPageImg12 from '../../img/SigninPageImg/planner12.jpg';
 
 export const ImgArrayForRandom = [
-    SigninPageImg1,
-    SigninPageImg2,
-    SigninPageImg3,
-    SigninPageImg4,
-    SigninPageImg5,
-    SigninPageImg6,
-    SigninPageImg7,
-    SigninPageImg8,
-    SigninPageImg9,
+    SigninPageImg01,
+    SigninPageImg02,
+    SigninPageImg03,
+    SigninPageImg04,
+    SigninPageImg05,
+    SigninPageImg06,
+    SigninPageImg07,
+    SigninPageImg08,
+    SigninPageImg09,
     SigninPageImg10,
     SigninPageImg11,
     SigninPageImg12
