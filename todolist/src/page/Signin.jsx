@@ -22,10 +22,11 @@ const Signin = () => {
     isSignin ? 
 
       <Navigate to="/todo"/> : // <Todo/> 로 가도록 설정해줄 수도 있지만 그렇게 하면 url 이 /signin 인채로 남음 ! 그래서 Navigate 로 하는 게 사용자경험에 더 좋다
-      
 
       <Grid container component="main" sx={{ height: '100vh' }}>
+
         <CssBaseline />
+        
         <Grid
           item
           xs={false}
@@ -40,6 +41,7 @@ const Signin = () => {
             backgroundPosition: 'center',
           }}
         />
+
         <Grid item xs={12} sm={8} md={5} elevation={6} square>
 
           <Container component="main" maxWidth="xs">
