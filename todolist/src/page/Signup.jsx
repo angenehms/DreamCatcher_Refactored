@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const Signup = () => {
 
@@ -17,6 +18,7 @@ const Signup = () => {
 
       <Navigate to="/todo"/> : // <Todo/> 로 가도록 설정해줄 수도 있지만 그렇게 하면 url 이 /signup 인채로 남음 ! 그래서 Navigate 로 하는 게 사용자경험에 더 좋다
       <Container component="main" maxWidth="xs">
+        <CssBaseline/>
         <Box sx={{ marginTop: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         
           <Avatar sx={{ boxShadow:5, m: 2, bgcolor:"secondary.main" }}>

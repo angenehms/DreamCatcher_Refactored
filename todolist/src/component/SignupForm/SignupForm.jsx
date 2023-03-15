@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { sendForSignupFunction } from '../../api/Auth';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 
 // sendForSignupFunction 는 회원가입을 위해 필요내용을 보내주는 틀(함수)
 
@@ -50,11 +53,20 @@ const SignupForm = () => {
 
   return (
     <form>
-      <TextField label="Email Address" type="text" required name="email" value={identification} onChange={changeIdentificationValue}/>
-      <TextField label="Password" type="password" required name="password" value={password} onChange={changePasswordValue}/>
-      <TextField label="Password Check" type="password" required name="passwordCheck" value={passwordChecking} onChange={changePasswordChecking}/>
-      <button disabled={!validityResult} onClick={signupFunction}>Signup</button>
+        <TextField label="Email Address" type="text" sx={{mt : 5}} required fullWidth name="email" value={identification} onChange={changeIdentificationValue}/>
+        <TextField label="Password" type="password" sx={{mt : 1.5}} required fullWidth name="password" value={password} onChange={changePasswordValue}/>
+        <TextField label="Password Check" type="password" sx={{mt : 1.5}} required fullWidth name="passwordCheck" value={passwordChecking} onChange={changePasswordChecking}/>
+        <Button variant="contained" type="submit" sx={{mt : 3, mb : 2}} fullWidth disabled={!validityResult} onClick={signupFunction}>Signup</Button>
+
+
+        <Grid container spacing={2}>
+            <Grid item xs></Grid>
+            <Grid item>
+                <Link href="/signin">Go To Signin</Link>
+            </Grid>
+        </Grid>
     </form>
+
   )
 };
 
