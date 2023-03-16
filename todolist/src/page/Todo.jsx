@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { sendForReadTodoFunction } from '../api/Auth'
-import SignoutForm from '../component/SignoutForm/SignoutForm'
-import TodoCreateForm from '../component/TodoCreateForm/TodoCreateForm'
-import TodoUpdateDeleteForm from '../component/TodoUpdateDeleteForm/TodoUpdateDeleteForm'
-import { Navigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { sendForReadTodoFunction } from '../api/Auth';
+import SignoutForm from '../component/SignoutForm/SignoutForm';
+import TodoCreateForm from '../component/TodoCreateForm/TodoCreateForm';
+import TodoUpdateDeleteForm from '../component/TodoUpdateDeleteForm/TodoUpdateDeleteForm';
+import { Navigate } from 'react-router-dom';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const Todo = () => {
 
@@ -40,13 +43,17 @@ const Todo = () => {
 
     isSignin ? 
 
-    <>
-      <h1>Todo List</h1>
+    <Container component="main" maxWidth="xs">
+      <CssBaseline/>
 
-      <TodoCreateForm readTodoFunction={readTodoFunction}/>
-      <TodoUpdateDeleteForm readTodoFunction={readTodoFunction} todoListInfo={todoListInfo}/>
-      <SignoutForm/>
-    </> :
+      <Box sx={{ marginTop: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <h1>Todo List</h1>
+        <TodoCreateForm readTodoFunction={readTodoFunction}/>
+        <TodoUpdateDeleteForm readTodoFunction={readTodoFunction} todoListInfo={todoListInfo}/>
+        <SignoutForm/>
+      </Box>
+
+    </Container> :
     <Navigate to="/signin"/> // <Signin/> 으로 가도록 설정해줄 수도 있지만 그렇게 하면 url 이 /signup 인채로 남음 ! 그래서 Navigate 로 하는 게 사용자경험에 더 좋다
   )
 }

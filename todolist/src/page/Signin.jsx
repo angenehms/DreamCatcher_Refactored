@@ -1,5 +1,5 @@
-import React from 'react'
-import SigninForm from '../component/SigninForm/SigninForm'
+import React from 'react';
+import SigninForm from '../component/SigninForm/SigninForm';
 import { Navigate } from 'react-router-dom'
 import Typography from '@mui/material/Typography';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
