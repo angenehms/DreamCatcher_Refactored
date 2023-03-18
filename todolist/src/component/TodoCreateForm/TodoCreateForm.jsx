@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { sendForAddTodoFunction } from '../../api/Auth';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
 
 const TodoCreateForm = ({readTodoFunction}) => {
 
@@ -17,10 +20,17 @@ const TodoCreateForm = ({readTodoFunction}) => {
   };
 
   return (
-    <>
-      <input type="text" data-testid="new-todo-input" value={addTodoInputValue} onChange={changeAddTodoValue}/>
-      <button data-testid="new-todo-add-button" onClick={addTodoFunction}>Add</button>
-    </>
+    <Grid container columnSpacing={1} sx={{ alignItems: "center" }}>
+
+      <Grid item xs={11}>
+        <TextField sx={{width:"100%"}} type="text" data-testid="new-todo-input" value={addTodoInputValue} onChange={changeAddTodoValue}/>
+      </Grid>
+
+      <Grid item xs={1}>
+        <Button data-testid="new-todo-add-button" onClick={addTodoFunction}>Add</Button>
+      </Grid>
+
+    </Grid>
   )
 };
 

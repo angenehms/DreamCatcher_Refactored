@@ -98,7 +98,7 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
                             checked={isDone}
                             tabIndex={-1}
                             disableRipple
-                            // inputProps={{ "aria-labelledby" : `${listId}` }}
+                            inputProps={{ "aria-labelledby" : `${listId}` }}
                             onClick={handleCheckToggle}
                         />
                     </ListItemIcon>
@@ -107,7 +107,7 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
             </ListItem>
         :
             <ListItem
-                // textdeco = { isDone ? 'line-through' : 'initial'}
+                sx={{textDecoration:`${ isDone ? 'line-through' : 'initial'}`}}
                 secondaryAction={
                     <>
                         <IconButton onClick={open} edge="end" aria-label="modificationBtn">

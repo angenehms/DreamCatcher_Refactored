@@ -5,7 +5,7 @@ const TodoUpdateDeleteForm = ({todoListInfo, readTodoFunction}) => {
 
   return (
 
-    <div style={{marginRight:"5%"}}>
+    <>
       <ul>
 
         {todoListInfo.map((individual) => { 
@@ -14,7 +14,7 @@ const TodoUpdateDeleteForm = ({todoListInfo, readTodoFunction}) => {
         })} {/* 여기서 id 는 key 처럼 예약어가 아니다! 똑같이 프롭스의 이름이 될뿐! */}
         
       </ul>
-    </div>
+    </>
 
   )
 };
