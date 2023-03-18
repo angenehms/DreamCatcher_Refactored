@@ -43,11 +43,11 @@ const Todo = () => {
 
     isSignin ? 
 
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="md">
       <CssBaseline/>
 
       <Box sx={{ marginTop: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <h1>Todo List</h1>
+        <h1>Dream Catcher</h1>
         <TodoCreateForm readTodoFunction={readTodoFunction}/>
         <TodoUpdateDeleteForm readTodoFunction={readTodoFunction} todoListInfo={todoListInfo}/>
         <SignoutForm/>

@@ -1,5 +1,12 @@
-import React, { useState } from 'react'
-import { sendForDeleteTodoFunction, sendForEditTodoFunction } from '../../api/Auth'
+import React, { useState } from 'react';
+import { sendForDeleteTodoFunction, sendForEditTodoFunction } from '../../api/Auth';
+import Grid from '@mui/material/Grid';
+import IconButton from "@mui/material/IconButton";
+import EditIcon from '@mui/icons-material/Edit';
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+
 
 const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunction}) => {
 
@@ -52,24 +59,28 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
   return (
 
         <li>
+            <Grid container>
+                <Grid item xs={10}>
+                    <label>
 
-            <label>
+                        <input type="checkbox" checked={isDone} onChange={isCheckedOnChangeFunction}/>
+                        {openEditInput ? 
+                        <input type="text" value={editContents} onChange={editContentsOnChangeFunction}/> 
+                        : <span>{whatTodo}</span>}
 
-                <input type="checkbox" checked={isDone} onChange={isCheckedOnChangeFunction}/>
-                {openEditInput ? 
-                <input type="text" value={editContents} onChange={editContentsOnChangeFunction}/> 
-                : <span>{whatTodo}</span>}
+                    </label>
+                </Grid>
 
-            </label>
+                <Grid item xs={2}>
+                    {openEditInput ? 
+                    <IconButton onClick={editTodoFunction}><TaskAltIcon/></IconButton> 
+                    : <IconButton data-testid="modify-button" onClick={open}><EditIcon/></IconButton>}
 
-            {openEditInput ? 
-            <button onClick={editTodoFunction}>Complete</button> 
-            : <button data-testid="modify-button" onClick={open}>Edit</button>}
-
-            {openEditInput ? 
-            <button onClick={close}>Cancel</button> 
-            : <button data-testid="delete-button" onClick={deleteTodoFunction}>Delete</button>}
-
+                    {openEditInput ? 
+                    <IconButton onClick={close}><HighlightOffIcon/></IconButton> 
+                    : <IconButton data-testid="delete-button" onClick={deleteTodoFunction}><DeleteOutlineRoundedIcon/></IconButton>}
+                </Grid>
+            </Grid>
         </li>
 
     )
