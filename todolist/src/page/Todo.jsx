@@ -48,7 +48,7 @@ const Todo = () => {
 
       <Box sx={{ marginTop: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
-        <h1>Dream Catcher</h1>
+        <h1 style={{background:"linear-gradient(to right bottom, #8d649d, rgb(150, 169, 235))", color: "transparent", WebkitBackgroundClip: "text"}}>Dream Catcher</h1>
         <Box sx={{width:"90%"}}>
           <TodoCreateForm readTodoFunction={readTodoFunction}/>
         </Box>
