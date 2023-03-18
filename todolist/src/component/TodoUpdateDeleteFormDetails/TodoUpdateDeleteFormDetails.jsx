@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { sendForDeleteTodoFunction, sendForEditTodoFunction } from '../../api/Auth';
-import Grid from '@mui/material/Grid';
+// import Grid from '@mui/material/Grid';
 import IconButton from "@mui/material/IconButton";
 import EditIcon from '@mui/icons-material/Edit';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Checkbox from "@mui/material/Checkbox";
+import Input from '@mui/material/Input';
+import ListItem from '@mui/material/ListItem';
 
 const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunction}) => {
 
@@ -33,13 +38,13 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
 
     const [isDone, setIsDone] = useState(isChecked);
 
-    const isCheckedOnChangeFunction = (e) => {
+    // const isCheckedOnChangeFunction = (e) => {
         // console.log("isChecked", isChecked);
         // console.log("e.target.checked", e.target.checked);
         // console.log("isDone", isDone);
-        setIsDone(e.target.checked);
-        editTodoFunction();
-    };
+    //     setIsDone(!isDone);
+    //     editTodoFunction();
+    // };
 
     const sendContentsForEdit = {
         todo : `${editContents}`,
@@ -56,32 +61,111 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
         }
     };
 
+      const handleCheckToggle = async () => {
+        await sendForEditTodoFunction(listId, sendContentsForEdit);
+        setIsDone(!isDone);
+        readTodoFunction();
+    } 
+
+    const inputProp = { 'aria-label': 'editInput'};
+
+
   return (
 
-        <li>
-            <Grid container>
-                <Grid item xs={10}>
-                    <label>
+    <>
+        {openEditInput ? 
+            <ListItem
+                secondaryAction={
+                    <>
+                        <IconButton onClick={editTodoFunction} edge="end" aria-label="CompletedBtn">
+                            <TaskAltIcon/>
+                        </IconButton>
+                        <IconButton onClick={close} edge="end" aria-label="cancelBtn">
+                            <HighlightOffIcon/>
+                        </IconButton>
+                    </>
+                }
+            
+                disablePadding
+            >
+                <ListItemButton
+                    role={undefined}
+                    dense
+                >
+                    <ListItemIcon>
+                        <Checkbox
+                            edge="start"
+                            checked={isDone}
+                            tabIndex={-1}
+                            disableRipple
+                            // inputProps={{ "aria-labelledby" : `${listId}` }}
+                            onClick={handleCheckToggle}
+                        />
+                    </ListItemIcon>
+                    <Input value={editContents} onChange={editContentsOnChangeFunction} inputProps={inputProp} />
+                </ListItemButton>
+            </ListItem>
+        :
+            <ListItem
+                // textdeco = { isDone ? 'line-through' : 'initial'}
+                secondaryAction={
+                    <>
+                        <IconButton onClick={open} edge="end" aria-label="modificationBtn">
+                            <EditIcon/>
+                        </IconButton>
+                        <IconButton onClick={deleteTodoFunction} edge="end" aria-label="deleteBtn">
+                            <DeleteOutlineRoundedIcon/>
+                        </IconButton>
+                    </>
+                }
+            
+                disablePadding
+            >
+                <ListItemButton
+                    role={undefined}
+                    onClick={handleCheckToggle}
+                    dense
+                >
+                    <ListItemIcon>
+                        <Checkbox
+                            edge="start"
+                            checked={isDone}
+                            tabIndex={-1}
+                            disableRipple
+                            inputProps={{ "aria-labelledby": `${listId}` }}
+                        />
+                    </ListItemIcon>
+                    <ListItemText id={`${listId}`} primary={`${whatTodo}`} />
+                </ListItemButton>
+            </ListItem> 
+        }
+    </>
 
-                        <input type="checkbox" checked={isDone} onChange={isCheckedOnChangeFunction}/>
-                        {openEditInput ? 
-                        <input type="text" value={editContents} onChange={editContentsOnChangeFunction}/> 
-                        : <span>{whatTodo}</span>}
 
-                    </label>
-                </Grid>
+        // <li>
+        //     <Grid container>
+        //         <Grid item xs={10}>
+        //             <label>
 
-                <Grid item xs={2}>
-                    {openEditInput ? 
-                    <IconButton onClick={editTodoFunction}><TaskAltIcon/></IconButton> 
-                    : <IconButton data-testid="modify-button" onClick={open}><EditIcon/></IconButton>}
+        //                 <input type="checkbox" checked={isDone} onChange={isCheckedOnChangeFunction}/>
+        //                 {openEditInput ? 
+        //                 <input type="text" value={editContents} onChange={editContentsOnChangeFunction}/> 
+        //                 : <span>{whatTodo}</span>}
 
-                    {openEditInput ? 
-                    <IconButton onClick={close}><HighlightOffIcon/></IconButton> 
-                    : <IconButton data-testid="delete-button" onClick={deleteTodoFunction}><DeleteOutlineRoundedIcon/></IconButton>}
-                </Grid>
-            </Grid>
-        </li>
+        //             </label>
+        //         </Grid>
+
+        //         <Grid item xs={2}>
+        //             {openEditInput ? 
+        //             <IconButton onClick={editTodoFunction}><TaskAltIcon/></IconButton> 
+        //             : <IconButton data-testid="modify-button" onClick={open}><EditIcon/></IconButton>}
+
+        //             {openEditInput ? 
+        //             <IconButton onClick={close}><HighlightOffIcon/></IconButton> 
+        //             : <IconButton data-testid="delete-button" onClick={deleteTodoFunction}><DeleteOutlineRoundedIcon/></IconButton>}
+        //         </Grid>
+        //     </Grid>
+        // </li>
 
     )
 };
