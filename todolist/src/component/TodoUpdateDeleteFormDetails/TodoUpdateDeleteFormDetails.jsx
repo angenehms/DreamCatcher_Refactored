@@ -12,6 +12,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import Input from '@mui/material/Input';
 import ListItem from '@mui/material/ListItem';
+import Box from '@mui/material/Box';
 
 const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunction}) => {
 
@@ -76,14 +77,14 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
         {openEditInput ? 
             <ListItem
                 secondaryAction={
-                    <>
+                    <Box sx={{marginRight:"30px"}}>
                         <IconButton onClick={editTodoFunction} edge="end" aria-label="CompletedBtn">
                             <TaskAltIcon/>
                         </IconButton>
                         <IconButton onClick={close} edge="end" aria-label="cancelBtn">
                             <HighlightOffIcon/>
                         </IconButton>
-                    </>
+                    </Box>
                 }
             
                 disablePadding
@@ -102,21 +103,21 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
                             onClick={handleCheckToggle}
                         />
                     </ListItemIcon>
-                    <Input sx={{width:"100%", marginRight:"10%"}} value={editContents} onChange={editContentsOnChangeFunction} inputProps={inputProp} />
+                    <Input sx={{width:"100%", marginRight:"17%"}} value={editContents} onChange={editContentsOnChangeFunction} inputProps={inputProp} />
                 </ListItemButton>
             </ListItem>
         :
             <ListItem
                 sx={{textDecoration:`${ isDone ? 'line-through' : 'initial'}`}}
                 secondaryAction={
-                    <>
+                    <Box sx={{marginRight:"30px"}}>
                         <IconButton onClick={open} edge="end" aria-label="modificationBtn">
                             <EditIcon/>
                         </IconButton>
                         <IconButton onClick={deleteTodoFunction} edge="end" aria-label="deleteBtn">
                             <DeleteOutlineRoundedIcon/>
                         </IconButton>
-                    </>
+                    </Box>
                 }
             
                 disablePadding
@@ -135,7 +136,7 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
                             inputProps={{ "aria-labelledby": `${listId}` }}
                         />
                     </ListItemIcon>
-                    <ListItemText sx={{marginRight:"10%"}} id={`${listId}`} primary={`${whatTodo}`} />
+                    <ListItemText sx={{marginRight:"15%"}} id={`${listId}`} primary={`${whatTodo}`} />
                 </ListItemButton>
             </ListItem> 
         }
