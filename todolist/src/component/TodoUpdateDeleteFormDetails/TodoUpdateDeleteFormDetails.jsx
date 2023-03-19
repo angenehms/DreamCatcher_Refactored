@@ -102,7 +102,7 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
                             onClick={handleCheckToggle}
                         />
                     </ListItemIcon>
-                    <Input value={editContents} onChange={editContentsOnChangeFunction} inputProps={inputProp} />
+                    <Input sx={{width:"100%", marginRight:"10%"}} value={editContents} onChange={editContentsOnChangeFunction} inputProps={inputProp} />
                 </ListItemButton>
             </ListItem>
         :
@@ -135,7 +135,7 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
                             inputProps={{ "aria-labelledby": `${listId}` }}
                         />
                     </ListItemIcon>
-                    <ListItemText id={`${listId}`} primary={`${whatTodo}`} />
+                    <ListItemText sx={{marginRight:"10%"}} id={`${listId}`} primary={`${whatTodo}`} />
                 </ListItemButton>
             </ListItem> 
         }
