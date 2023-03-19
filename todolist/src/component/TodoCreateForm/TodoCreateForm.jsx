@@ -3,6 +3,7 @@ import { sendForAddTodoFunction } from '../../api/Auth';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
+import DreamCatcherButtonImg from '../../img/DreamCatcherButtonImg/DreamCatcherButtonImg.png'
 
 const TodoCreateForm = ({readTodoFunction}) => {
 
@@ -27,7 +28,7 @@ const TodoCreateForm = ({readTodoFunction}) => {
       </Grid>
 
       <Grid item xs={1}>
-        <Button data-testid="new-todo-add-button" onClick={addTodoFunction}>Add</Button>
+        <Button data-testid="new-todo-add-button" onClick={addTodoFunction}>{<img src={`${DreamCatcherButtonImg}`} alt="DreamCatcherButtonImg" style={{width:"80%"}}/>}</Button>
       </Grid>
 
     </Grid>
