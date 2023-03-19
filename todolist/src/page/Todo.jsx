@@ -52,7 +52,7 @@ const Todo = () => {
         <Box sx={{width:"90%"}}>
           <TodoCreateForm readTodoFunction={readTodoFunction}/>
         </Box>
-        <Box style={{width:"100%", marginRight:"5%", marginTop:"3%"}}>
+        <Box style={{height:"50vh", width:"100%", marginRight:"5%", marginTop:"7%"}}>
           <TodoUpdateDeleteForm readTodoFunction={readTodoFunction} todoListInfo={todoListInfo}/>
         </Box>
         <SignoutForm/>
