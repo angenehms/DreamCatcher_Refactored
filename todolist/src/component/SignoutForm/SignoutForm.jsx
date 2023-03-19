@@ -14,7 +14,7 @@ const SignoutForm = () => {
     };
 
   return (
-    <Box sx={{marginTop:"5%", mb:"5%"}}>
+    <Box sx={{position:"fixed", right:"5%", bottom:"0%", marginTop:"5%", mb:"5%"}}>
           <Button size="small" variant="contained" color="error" onClick={signoutFunction}>Signout</Button> 
     </Box>
   )
