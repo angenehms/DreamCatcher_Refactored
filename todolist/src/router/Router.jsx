@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Error from '../page/Error';
-import Signin from '../page/Signin';
-import Signup from '../page/Signup';
-import Todo from '../page/Todo';
+import Error from '../page/Error/Error';
+import Signin from '../page/Signin/Signin';
+import Signup from '../page/Signup/Signup';
+import Todo from '../page/Todo/Todo';
 
 const Router = () => {
 

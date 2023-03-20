@@ -1,5 +1,5 @@
 import React from 'react';
-import SignupForm from '../component/SignupForm/SignupForm';
+import SignupForm from '../../component/SignupForm/SignupForm';
 import { Navigate } from 'react-router-dom'
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
