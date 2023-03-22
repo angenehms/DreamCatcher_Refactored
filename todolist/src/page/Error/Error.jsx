@@ -1,11 +1,11 @@
 import React from 'react';
-import ErrorImg from '../../img/ErrorPageImg/ErrorPageImg.png';
+import * as S from './ErrorStyle'
 
 const Error = () => {
   return (
-    <div style={{marginTop:"220px", textAlign:"center"}}>
-      <img src={ErrorImg} alt="404 Error" style={{width:"170px", height:"170px"}}/>
-    </div>
+    <S.ContentsWrapper>
+      <S.PageImg/>
+    </S.ContentsWrapper>
   )
 }
 
