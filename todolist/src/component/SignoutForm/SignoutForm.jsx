@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Box } from '@mui/material';
+import Button from '@mui/material/Button';
+import * as S from './SignoutFormStyle'
 
 const SignoutForm = () => {
 
@@ -12,9 +13,20 @@ const SignoutForm = () => {
     };
 
   return (
-    <Box sx={{position:"fixed", right:"5%", bottom:"0%", marginTop:"5%", mb:"5%"}}>
-          <Button size="small" variant="contained" color="error" onClick={signoutFunction}>Signout</Button> 
-    </Box>
+
+    <S.WrapperBox>
+
+          <Button 
+            size="small" 
+            variant="contained" 
+            color="error" 
+            onClick={signoutFunction}
+          >
+            Signout
+          </Button> 
+
+    </S.WrapperBox>
+    
   )
 };
 
