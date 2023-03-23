@@ -4,9 +4,9 @@ import SignoutForm from '../../component/SignoutForm/SignoutForm';
 import TodoCreateForm from '../../component/TodoCreateForm/TodoCreateForm';
 import TodoUpdateDeleteForm from '../../component/TodoUpdateDeleteForm/TodoUpdateDeleteForm';
 import { Navigate } from 'react-router-dom';
-import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
+import * as S from './TodoStyle'
 
 const Todo = () => {
 
@@ -43,23 +43,26 @@ const Todo = () => {
 
     isSignin ? 
 
-    <Container component="main" maxWidth="sm">
+    <S.WrapperMuiContainer component="main" maxWidth="sm">
       <CssBaseline/>
 
-      <Box sx={{ marginTop: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Box className="ContentsMuiBox">
 
-        <h1 style={{fontSize:"50px", background:"linear-gradient(to right bottom, #8d649d, rgb(150, 169, 235))", color: "transparent", WebkitBackgroundClip: "text"}}>Dream Catcher</h1>
-        <Box sx={{width:"90%"}}>
+        <h1>Dream Catcher</h1>
+
+        <Box className="CreateFormMuiBox">
           <TodoCreateForm readTodoFunction={readTodoFunction}/>
         </Box>
-        <Box style={{height:"50vh", width:"100%", marginTop:"7%"}}>
+
+        <Box className="UpdateDeleteFormMuiBox">
           <TodoUpdateDeleteForm readTodoFunction={readTodoFunction} todoListInfo={todoListInfo}/>
         </Box>
+
         <SignoutForm/>
 
       </Box>
 
-    </Container> :
+    </S.WrapperMuiContainer> :
     <Navigate to="/signin"/> // <Signin/> 으로 가도록 설정해줄 수도 있지만 그렇게 하면 url 이 /signup 인채로 남음 ! 그래서 Navigate 로 하는 게 사용자경험에 더 좋다
   )
 }

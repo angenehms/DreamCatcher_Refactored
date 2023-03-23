@@ -2,14 +2,14 @@ import styled from "styled-components";
 import ErrorImg from '../../img/ErrorPageImg/ErrorPageImg.png';
 
 export const ContentsWrapper = styled.div({
-    marginTop:"220px", 
-    textAlign:"center"
+    marginTop: "220px", 
+    textAlign: "center"
 })
 
 export const PageImg = styled.img.attrs({
-    src : `${ErrorImg}`,
-    alt : "404 Error"
+    src: `${ErrorImg}`,
+    alt: "404 Error"
 }) ({
-    width:"170px", 
-    height:"170px"
+    width: "170px", 
+    height: "170px"
 })
