@@ -36,10 +36,39 @@ const SigninForm = () => {
     }; // 패스워드의 인풋값을 잡아내어 상태변경을 하기위한 함수
 
   return (
+
     <form>
-      <TextField label="Email Address" type="text" sx={{ mt: 5 }} required fullWidth name="email" autoComplete="email" onChange={changeIdentificationValue}/>
-      <TextField label="Password" type="password" sx={{ mt: 1.5 }} required fullWidth name="password" onChange={changePasswordValue}/>
-      <Button variant="contained" type="submit" sx={{ mt: 3, mb: 2 }} fullWidth onClick={signinFunction}>Signin</Button>
+
+      <TextField 
+        label="Email Address" 
+        type="text" 
+        sx={{ mt: 5 }} 
+        required 
+        fullWidth 
+        name="email" 
+        autoComplete="email" 
+        onChange={changeIdentificationValue}
+      />
+      
+      <TextField 
+        label="Password" 
+        type="password" 
+        sx={{ mt: 1.5 }} 
+        required 
+        fullWidth 
+        name="password" 
+        onChange={changePasswordValue}
+      />
+
+      <Button 
+        variant="contained" 
+        type="submit" 
+        sx={{ mt: 3, mb: 2 }} 
+        fullWidth 
+        onClick={signinFunction}
+      >
+        Signin
+      </Button>
       
       <Grid container spacing={2}>
         <Grid item xs></Grid>
@@ -48,7 +77,9 @@ const SigninForm = () => {
         </Grid>
       </Grid>
       {/* <Button variant="contained" type="submit" fullWidth onClick={moveToSignupPageFunction}>Go to Signup</Button> */}
+
     </form>
+    
   )
 };
 

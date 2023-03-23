@@ -19,10 +19,19 @@ const TodoCreateForm = ({readTodoFunction}) => {
   };
 
   return (
+
     <Grid container columnSpacing={1} sx={{ alignItems: "center" }}>
 
       <Grid item xs={11}>
-        <TextField sx={{width:"100%"}} type="text" data-testid="new-todo-input" value={addTodoInputValue} onChange={changeAddTodoValue}/>
+
+        <TextField 
+          sx={{ width: "100%" }} 
+          type="text" 
+          data-testid="new-todo-input" 
+          value={addTodoInputValue} 
+          onChange={changeAddTodoValue}
+        />
+
       </Grid>
 
       <Grid item xs={1}>
@@ -37,10 +46,11 @@ const TodoCreateForm = ({readTodoFunction}) => {
             style={{width:"80%"}}
           />}
         </Button>
-        
+
       </Grid>
 
     </Grid>
+    
   )
 };
 

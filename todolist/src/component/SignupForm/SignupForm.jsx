@@ -49,12 +49,52 @@ const SignupForm = () => {
     const validityResult = validityCheckFunction(); // 유효성검사 결과값(불리언)
 
   return (
-    <form>
-        <TextField label="Email Address" type="text" sx={{mt : 5}} required fullWidth name="email" value={identification} onChange={changeIdentificationValue}/>
-        <TextField label="Password" type="password" sx={{mt : 1.5}} required fullWidth name="password" value={password} onChange={changePasswordValue}/>
-        <TextField label="Password Check" type="password" sx={{mt : 1.5}} required fullWidth name="passwordCheck" value={passwordChecking} onChange={changePasswordChecking}/>
-        <Button variant="contained" type="submit" sx={{mt : 3, mb : 2}} fullWidth disabled={!validityResult} onClick={signupFunction}>Signup</Button>
 
+    <form>
+
+        <TextField 
+            label="Email Address" 
+            type="text" 
+            sx={{ mt: 5 }} 
+            required 
+            fullWidth 
+            name="email" 
+            value={identification} 
+            onChange={changeIdentificationValue}
+        />
+
+        <TextField 
+            label="Password" 
+            type="password" 
+            sx={{ mt: 1.5 }} 
+            required 
+            fullWidth 
+            name="password" 
+            value={password} 
+            onChange={changePasswordValue}
+        />
+
+        <TextField 
+            label="Password Check" 
+            type="password" 
+            sx={{ mt: 1.5 }} 
+            required 
+            fullWidth 
+            name="passwordCheck" 
+            value={passwordChecking} 
+            onChange={changePasswordChecking}
+        />
+
+        <Button 
+            variant="contained" 
+            type="submit" 
+            sx={{ mt: 3, mb: 2 }} 
+            fullWidth 
+            disabled={!validityResult} 
+            onClick={signupFunction}
+        >
+            Signup
+        </Button>
 
         <Grid container spacing={2}>
             <Grid item xs></Grid>
