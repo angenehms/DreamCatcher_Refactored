@@ -10,7 +10,6 @@ export const TitleH1 = styled.h1`
 
 export const ContentsMuiBox = styled(Box)`
     &.ContentsMuiBox {
-        margin-top: 2; 
         display: flex; 
         flex-direction: column; 
         align-items: center;

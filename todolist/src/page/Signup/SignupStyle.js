@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
+import { Container, Box } from '@mui/material';
 
 export const WrapperMuiContainer = styled(Container)`
     margin-top: 7%;

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { ImgArrayForRandom } from '../../component/ImgArrayForRandom/ImgArrayForRandom';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
+import { Grid, Box } from '@mui/material';
 
 const imgRandomNumber = Math.floor(Math.random() * ImgArrayForRandom.length);
 const randomBackgroundImg = ImgArrayForRandom[imgRandomNumber]

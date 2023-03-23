@@ -1,10 +1,8 @@
 import React from 'react';
-import SignupForm from '../../component/SignupForm/SignupForm';
 import { Navigate } from 'react-router-dom'
-import Typography from '@mui/material/Typography';
-import Avatar from '@mui/material/Avatar';
+import SignupForm from '../../component/SignupForm/SignupForm';
+import { Typography, Avatar, CssBaseline } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import CssBaseline from '@mui/material/CssBaseline';
 import * as S from './SignupStyle'
 
 const Signup = () => {

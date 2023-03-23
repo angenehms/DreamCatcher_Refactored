@@ -1,12 +1,8 @@
 import React from 'react';
-import SigninForm from '../../component/SigninForm/SigninForm';
 import { Navigate } from 'react-router-dom'
-import Typography from '@mui/material/Typography';
+import SigninForm from '../../component/SigninForm/SigninForm';
+import { Typography, Avatar, Container, Grid, CssBaseline} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Avatar from '@mui/material/Avatar';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import CssBaseline from '@mui/material/CssBaseline';
 import * as S from './SigninStyle'
 
 const Signin = () => {
