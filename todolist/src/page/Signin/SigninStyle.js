@@ -19,7 +19,7 @@ export const RandomImgMuiGrid = styled(Grid)`
 }
 `
 
-export const SigninFormBox = styled(Box)`
+export const SigninFormMuiBox = styled(Box)`
     margin-top: 30%;
     display: flex;
     flex-direction: column; 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ErrorImg from '../../img/ErrorPageImg/ErrorPageImg.png';
 
-export const ContentsWrapper = styled.div({
+export const WrapperDiv = styled.div({
     marginTop: "220px", 
     textAlign: "center"
 })

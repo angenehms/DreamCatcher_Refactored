@@ -48,7 +48,7 @@ const Signin = () => {
 
           <Container component="main" maxWidth="xs">
 
-            <S.SigninFormBox>
+            <S.SigninFormMuiBox>
 
               <Avatar sx={{ boxShadow: 5, margin: 2, bgcolor: "secondary.main" }}>
                 <LockOutlinedIcon/> 
@@ -57,7 +57,7 @@ const Signin = () => {
               <Typography component="h1" variant="h5">Signin Page</Typography>
               <SigninForm/>  
 
-            </S.SigninFormBox>
+            </S.SigninFormMuiBox>
 
           </Container> 
 

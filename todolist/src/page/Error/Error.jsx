@@ -3,9 +3,9 @@ import * as S from './ErrorStyle'
 
 const Error = () => {
   return (
-    <S.ContentsWrapper>
+    <S.WrapperDiv>
       <S.PageImg/>
-    </S.ContentsWrapper>
+    </S.WrapperDiv>
   )
 }
 
