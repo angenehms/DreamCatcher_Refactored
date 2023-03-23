@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { sendForSigninFunction } from '../../api/Auth';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
+import { Button, TextField, Link, Grid } from '@mui/material';
 
 const SigninForm = () => {
     const navigate = useNavigate();

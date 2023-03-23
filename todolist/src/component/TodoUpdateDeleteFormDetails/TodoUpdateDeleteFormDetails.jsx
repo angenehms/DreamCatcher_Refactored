@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 import { sendForDeleteTodoFunction, sendForEditTodoFunction } from '../../api/Auth';
-// import Grid from '@mui/material/Grid';
-import IconButton from "@mui/material/IconButton";
+import { IconButton, ListItemButton, ListItemIcon, ListItemText, Checkbox, Input, ListItem, Box } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Checkbox from "@mui/material/Checkbox";
-import Input from '@mui/material/Input';
-import ListItem from '@mui/material/ListItem';
-import Box from '@mui/material/Box';
 
 const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunction}) => {
 

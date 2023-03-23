@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { sendForSignupFunction } from '../../api/Auth';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
+import { TextField, Button, Grid, Link } from '@mui/material';
 
 // sendForSignupFunction 는 회원가입을 위해 필요내용을 보내주는 틀(함수)
 

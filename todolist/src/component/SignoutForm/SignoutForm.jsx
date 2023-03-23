@@ -1,8 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-
+import { Button, Box } from '@mui/material';
 
 const SignoutForm = () => {
 
