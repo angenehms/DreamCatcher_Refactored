@@ -24,7 +24,6 @@ const Signup = () => {
         <S.SignupFormMuiBox>
 
           <Avatar sx={{ boxShadow: 5, margin: 2, bgcolor: "secondary.main" }}> {/* Avatar 컴포넌트의 스타일도 스타일드 컴포넌트로 빼고 싶은데 잘 안되었다 .. ! */}
-
             <LockOutlinedIcon/> 
           </Avatar>
 
