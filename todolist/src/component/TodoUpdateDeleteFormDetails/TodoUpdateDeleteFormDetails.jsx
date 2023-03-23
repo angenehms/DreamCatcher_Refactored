@@ -62,14 +62,13 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
 
     const inputProp = { 'aria-label': 'editInput'};
 
-
   return (
 
     <>
         {openEditInput ? 
             <ListItem
                 secondaryAction={
-                    <Box sx={{marginRight:"30px"}}>
+                    <Box sx={{ marginRight: "30px" }}>
                         <IconButton onClick={editTodoFunction} edge="end" aria-label="CompletedBtn">
                             <TaskAltIcon/>
                         </IconButton>
@@ -95,14 +94,19 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
                             onClick={handleCheckToggle}
                         />
                     </ListItemIcon>
-                    <Input sx={{width:"100%", marginRight:"17%"}} value={editContents} onChange={editContentsOnChangeFunction} inputProps={inputProp} />
+                    <Input 
+                        sx={{ width:"100%", marginRight:"17%" }} 
+                        value={editContents} 
+                        onChange={editContentsOnChangeFunction} 
+                        inputProps={inputProp} 
+                    />
                 </ListItemButton>
             </ListItem>
         :
             <ListItem
-                sx={{textDecoration:`${ isDone ? 'line-through' : 'initial'}`}}
+                sx={{ textDecoration: `${ isDone ? 'line-through' : 'initial'}` }}
                 secondaryAction={
-                    <Box sx={{marginRight:"30px"}}>
+                    <Box sx={{ marginRight : "30px" }}>
                         <IconButton onClick={open} edge="end" aria-label="modificationBtn">
                             <EditIcon/>
                         </IconButton>
@@ -128,7 +132,7 @@ const TodoUpdateDeleteFormDetails = ({listId, whatTodo, isChecked, readTodoFunct
                             inputProps={{ "aria-labelledby": `${listId}` }}
                         />
                     </ListItemIcon>
-                    <ListItemText sx={{marginRight:"15%"}} id={`${listId}`} primary={`${whatTodo}`} />
+                    <ListItemText sx={{ marginRight: "15%" }} id={`${listId}`} primary={`${whatTodo}`} />
                 </ListItemButton>
             </ListItem> 
         }
