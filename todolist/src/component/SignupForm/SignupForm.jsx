@@ -2,16 +2,16 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { sendForSignupFunction } from '../../api/Auth';
 import { TextField, Button, Grid, Link } from '@mui/material';
-import { useInput } from '../../hook/useInput';
+import { useSignupInput } from '../../hook/useSignupInput';
 
 // sendForSignupFunction 는 회원가입을 위해 필요내용을 보내주는 틀(함수)
 
 const SignupForm = () => {
 
     const navigate = useNavigate();
-    const [identification, identificationChangeFunction, identificationValidity] = useInput("");
-    const [password, passwordChangeFunction, passwordValidity] = useInput(""); 
-    const [passwordCheck, passwordCheckChangeFunction] = useInput("");
+    const [identification, identificationChangeFunction, identificationValidity] = useSignupInput("");
+    const [password, passwordChangeFunction, passwordValidity] = useSignupInput(""); 
+    const [passwordCheck, passwordCheckChangeFunction] = useSignupInput("");
     // 배열의 두번째 인덱스인 함수들은 사실 똑같은 역할을 하지만 이름만 다르다고 생각한다! 그럼 왜 굳이 이름을 다르게 하는걸까? 왜냐면 의미는 같지만 두번 선언할 수 없게 되어있다. 이름을 갖게하면 에러가 뜬다.
 
     const passwordCheckValidity = () => {

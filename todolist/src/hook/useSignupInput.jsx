@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function useInput () {
+export function useSignupInput () {
 
     const [inputValue, setInputValue] = useState("");
     const [validity, setValidity] = useState(false);
