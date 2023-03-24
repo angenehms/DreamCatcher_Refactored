@@ -43,7 +43,7 @@ const TodoCreateForm = ({readTodoFunction}) => {
           {<img 
             src={`${DreamCatcherButtonImg}`} 
             alt="DreamCatcherButtonImg" 
-            style={{width:"80%"}}
+            style={{ width: "80%" }}
           />}
         </Button>
 
