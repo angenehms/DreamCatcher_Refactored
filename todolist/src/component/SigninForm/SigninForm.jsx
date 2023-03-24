@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { sendForSigninFunction } from '../../api/Auth';
 import { Button, TextField, Link, Grid } from '@mui/material';
+import { useSigninInput } from '../../hook/useSigninInput';
 
 const SigninForm = () => {
-  
+
     const navigate = useNavigate();
     // const moveToSignupPageFunction = () => {
     //     navigate("/signup");
     // };
 
-    const [identification, setIdentification] = useState("");
-    const [password, setPassword] = useState("");
+    const [ identification, identificationChangeFunction ] = useSigninInput("");
+    const [ password, passwordChangeFunction ] = useSigninInput("");
 
     const sendContentsForSignin = {
       email : `${identification}`, 
@@ -29,18 +30,12 @@ const SigninForm = () => {
       // console.log(res);
     };
 
-    const changeIdentificationValue = (e) => {
-      setIdentification(e.target.value);
-    }; // 아이디의 인풋값을 잡아내어 상태변경을 하기위한 함수
-    const changePasswordValue = (e) => {
-      setPassword(e.target.value);
-    }; // 패스워드의 인풋값을 잡아내어 상태변경을 하기위한 함수
-
   return (
 
     <form>
 
       <TextField 
+        id="Identification"
         label="Email Address" 
         type="text" 
         sx={{ mt: 5 }} 
@@ -48,17 +43,18 @@ const SigninForm = () => {
         fullWidth 
         name="email" 
         autoComplete="email" 
-        onChange={changeIdentificationValue}
+        onChange={identificationChangeFunction}
       />
       
       <TextField 
+        id="Password"
         label="Password" 
         type="password" 
         sx={{ mt: 1.5 }} 
         required 
         fullWidth 
         name="password" 
-        onChange={changePasswordValue}
+        onChange={passwordChangeFunction}
       />
 
       <Button 

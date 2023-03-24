@@ -18,7 +18,7 @@ export function useSignupInput () {
         }
     }
     
-  return [{inputValue, setInputValue}, validityCheckFunction, validity] 
+  return [inputValue, validityCheckFunction, validity] 
 
 }
 
