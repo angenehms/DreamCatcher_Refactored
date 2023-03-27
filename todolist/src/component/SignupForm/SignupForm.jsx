@@ -14,10 +14,6 @@ const SignupForm = () => {
     const [passwordCheck, passwordCheckChangeFunction] = useSignupInput("");
     // 배열의 두번째 인덱스인 함수들은 사실 똑같은 역할을 하지만 이름만 다르다고 생각한다! 그럼 왜 굳이 이름을 다르게 하는걸까? 왜냐면 의미는 같지만 두번 선언할 수 없게 되어있다. 이름을 갖게하면 에러가 뜬다.
 
-    console.log(identification);
-    console.log(password);
-    console.log(passwordCheck);
-
     const passwordCheckValidity = () => {
         if ( password === passwordCheck ) {
             return true;
