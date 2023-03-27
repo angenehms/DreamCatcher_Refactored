@@ -2,6 +2,7 @@ import { createStore } from 'redux';
 // 취소선은 리덕스 툴킷 사용권장을 하기 때문에 그어진다고 한다. 동작에는 아무런 지장이 없다고 한다.
 
 function reducer (currentState, action) { // reducer 는 스토어 내의 스테이트를 어떻게 바꿀것인가를 결정
+  
   if ( currentState === undefined ) {
     return {
       // number : 1,
@@ -13,8 +14,10 @@ function reducer (currentState, action) { // reducer 는 스토어 내의 스테
 
   if ( action.type === "" ) {
       // newState.number++;
-    return newState;
   }
+
+  return newState;
+
 }
 
 export const store  = createStore(reducer);
