@@ -2,9 +2,9 @@
 
 <br>
 
-<img width="200" alt="Signin" src="https://user-images.githubusercontent.com/111214565/230056650-18865634-6062-4090-a4c6-6b0103a9e14c.png">
-<img width="200" alt="Signup" src="https://user-images.githubusercontent.com/111214565/230056658-ae340a82-3dec-4530-9f41-03e2fcf0ba8c.png">
-<img width="200" alt="Main" src="https://user-images.githubusercontent.com/111214565/230056662-d9e5bd8c-675f-4723-929a-82a606986b0e.png">
+<img style="display:inline; margin-right:10px;" width="200" alt="Signin" src="https://user-images.githubusercontent.com/111214565/230056650-18865634-6062-4090-a4c6-6b0103a9e14c.png">
+<img style="display:inline; margin-right:10px;" width="200" alt="Signup" src="https://user-images.githubusercontent.com/111214565/230056658-ae340a82-3dec-4530-9f41-03e2fcf0ba8c.png">
+<img style="display:inline; margin-right:10px;" width="200" alt="Main" src="https://user-images.githubusercontent.com/111214565/230056662-d9e5bd8c-675f-4723-929a-82a606986b0e.png">
 
 <br>
 <br>
