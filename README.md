@@ -9,41 +9,40 @@
 <br>
 <br>
 
-## 0️⃣ 프로젝트 소개
+## 1. 프로젝트 소개
 
-꿈을 구체화시켜 꿈으로 한걸음 다가가보세요! `리액트`를 이용해 구현한 드림캐쳐에서는 `로그인, 회원가입 기능`을 통해 나만의 공간에 나만의 꿈을 기록할 수 있습니다.
-
-<br>
-
-## 1️⃣ 사용하기
-
-**배포링크 : https://sg-dreamcatcher.netlify.app**
-<br>
-**테스트 계정 : dream@catcher.com**
-<br>
-**비밀번호 : drawyourdream!** 
-<br>
+⭐️ 꿈을 구체화시켜 꿈으로 한걸음 다가가보세요! `React`를 이용해 `CRUD`를 구현한 드림캐쳐에서는 `로그인, 회원가입 기능`을 통해 나만의 공간에 나만의 꿈을 기록할 수 있습니다.
 
 <br>
 
-## 2️⃣ 기능시연
+## 2. 사용하기
+
+🖥️ **배포링크 : https://sg-dreamcatcher.netlify.app**
+<br>
+🆔 **테스트 계정 : dream@catcher.com**
+<br>
+🔑 **비밀번호 : drawyourdream!**
 
 <br>
 
-## 3️⃣ 기술스택
-
-**✔️ react**
-<br>
-**✔️ javascript**
-<br>
-**✔️ material-ui (MUI)**
-<br>
-**✔️ styled-component**
-<br>
-**✔️ axios**
+## 3. 기능시연
 
 <br>
 
-## 4️⃣ 폴더구조
+## 4. 기술스택
+
+🐶 **React**
+<br>
+🐱 **JavaScript**
+<br>
+🐭 **Material-UI (MUI)**
+<br>
+🐹 **Styled-Component**
+<br>
+🐰 **Axios**
+
+<br>
+
+## 5. 폴더구조
 
 <br>
