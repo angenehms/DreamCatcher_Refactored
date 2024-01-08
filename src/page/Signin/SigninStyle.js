@@ -1,26 +1,26 @@
 import styled from "styled-components";
-import { ImgArrayForRandom } from '../../component/ImgArrayForRandom/ImgArrayForRandom';
-import { Grid, Box } from '@mui/material';
+import { ImgArrayForRandom } from "../../component/ImgArrayForRandom/ImgArrayForRandom";
+import { Grid, Box } from "@mui/material";
 
 const imgRandomNumber = Math.floor(Math.random() * ImgArrayForRandom.length);
-const randomBackgroundImg = ImgArrayForRandom[imgRandomNumber]
+const randomBackgroundImg = ImgArrayForRandom[imgRandomNumber];
 
 export const WrapperMuiGrid = styled(Grid)`
-    height: 100vh;
-`
+  height: 100vh;
+`;
 
 export const RandomImgMuiGrid = styled(Grid)`
-    &.randomImgMuiGrid {
+  &.randomImgMuiGrid {
     background-image: url(${randomBackgroundImg});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
-`
+  }
+`;
 
 export const SigninFormMuiBox = styled(Box)`
-    margin-top: 30%;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-`
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

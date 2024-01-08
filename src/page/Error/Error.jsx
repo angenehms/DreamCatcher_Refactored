@@ -1,16 +1,12 @@
-import React from 'react';
-import * as S from './ErrorStyle'
+import React from "react";
+import * as S from "./ErrorStyle";
 
 const Error = () => {
   return (
-
     <S.WrapperDiv>
-
-      <S.PageImg/>
-
+      <S.PageImg />
     </S.WrapperDiv>
+  );
+};
 
-  )
-}
-
-export default Error
+export default Error;

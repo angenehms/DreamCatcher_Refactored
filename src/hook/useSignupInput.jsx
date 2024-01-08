@@ -1,24 +1,20 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-export function useSignupInput () {
+export function useSignupInput() {
+  const [inputValue, setInputValue] = useState("");
+  const [validity, setValidity] = useState(false);
 
-    const [inputValue, setInputValue] = useState("");
-    const [validity, setValidity] = useState(false);
-    
-    const validityCheckFunction = (e) => {
+  const validityCheckFunction = (e) => {
+    setInputValue(e.target.value);
 
-        setInputValue(e.target.value);
-
-        if (e.target.id === "Identification" && e.target.value.includes("@")) {
-            setValidity(true);
-        } else if (e.target.id === "Password" && e.target.value.length >= 8) {
-            setValidity(true);
-        } else {
-            setValidity(false);
-        }
+    if (e.target.id === "Identification" && e.target.value.includes("@")) {
+      setValidity(true);
+    } else if (e.target.id === "Password" && e.target.value.length >= 8) {
+      setValidity(true);
+    } else {
+      setValidity(false);
     }
-    
-  return [inputValue, validityCheckFunction, validity] 
+  };
 
+  return [inputValue, validityCheckFunction, validity];
 }
-

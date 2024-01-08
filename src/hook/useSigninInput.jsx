@@ -1,14 +1,11 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-export function useSigninInput () {
+export function useSigninInput() {
+  const [inputValue, setInputValue] = useState("");
 
-    const [inputValue, setInputValue] = useState("");
+  const changeValueFunction = (e) => {
+    setInputValue(e.target.value);
+  };
 
-    const changeValueFunction = (e) => {
-
-        setInputValue(e.target.value);
-     
-    }
-
-    return [inputValue, changeValueFunction]
+  return [inputValue, changeValueFunction];
 }
