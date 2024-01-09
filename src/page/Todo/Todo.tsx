@@ -19,9 +19,10 @@ const Todo = () => {
 
     if (isSignin) {
       const res = await sendForReadTodoFunction();
-      const listInfo = res.data;
-      // console.log(listInfo)
-      setTodoListInfo(listInfo);
+      if (res) {
+        const listInfo = res.data;
+        setTodoListInfo(listInfo);
+      }
     } else {
       alert("로그인 후 이용 가능합니다!");
     } // 왜 alert 가 두번씩 뜰까?

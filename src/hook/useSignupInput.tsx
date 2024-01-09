@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export function useSignupInput() {
+export function useSignupInput():[string, (e: React.ChangeEvent<HTMLInputElement>) => void, boolean] {
   const [inputValue, setInputValue] = useState("");
   const [validity, setValidity] = useState(false);
 
-  const validityCheckFunction = (e) => {
+  const validityCheckFunction = (e:React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
 
     if (e.target.id === "Identification" && e.target.value.includes("@")) {

@@ -1,6 +1,11 @@
 import { axiosAPI, axiosAuthAPI } from "./Client";
 
-export const sendForSignupFunction = async (body) => {
+interface AboutLoginType {
+  email: string,
+  password: string
+}
+
+export const sendForSignupFunction = async (body:AboutLoginType) => {
   try {
     const res = await axiosAPI.post("/auth/signup", body);
     return res;
@@ -10,7 +15,7 @@ export const sendForSignupFunction = async (body) => {
   }
 };
 
-export const sendForSigninFunction = async (body) => {
+export const sendForSigninFunction = async (body:AboutLoginType) => {
   try {
     const res = await axiosAuthAPI.post("/auth/signin", body);
     return res;
@@ -20,7 +25,7 @@ export const sendForSigninFunction = async (body) => {
   }
 };
 
-export const sendForAddTodoFunction = async (body) => {
+export const sendForAddTodoFunction = async (body:{todo: string}) => {
   try {
     const res = await axiosAuthAPI.post("/todos", body);
     return res;
@@ -40,7 +45,7 @@ export const sendForReadTodoFunction = async () => {
   }
 }; // page/Todo/Todo.jsx 에 위치
 
-export const sendForDeleteTodoFunction = async (id) => {
+export const sendForDeleteTodoFunction = async (id:number) => {
   try {
     const res = await axiosAuthAPI.delete(`/todos/${id}`);
     return res;
@@ -50,7 +55,7 @@ export const sendForDeleteTodoFunction = async (id) => {
   }
 }; // component/TodoEditDeleteFormTag/TodoEditDeleteFormTag.jsx 에 위치
 
-export const sendForEditTodoFunction = async (id, body) => {
+export const sendForEditTodoFunction = async (id:number, body:{todo:string, isCompleted:boolean}) => {
   try {
     const res = await axiosAuthAPI.put(`/todos/${id}`, body);
     return res;

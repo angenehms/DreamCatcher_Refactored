@@ -18,12 +18,20 @@ import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
+interface DetailsProps {
+  key: number,
+  listId: number,
+  whatTodo: string,
+  isChecked: boolean,
+  readTodoFunction: () => void
+}
+
 const TodoUpdateDeleteFormDetails = ({
   listId,
   whatTodo,
   isChecked,
   readTodoFunction,
-}) => {
+}:DetailsProps) => {
   const deleteTodoFunction = async () => {
     // 투두 삭제함수
     await sendForDeleteTodoFunction(listId);
@@ -44,7 +52,7 @@ const TodoUpdateDeleteFormDetails = ({
     setEditContents(whatTodo);
   };
 
-  const editContentsOnChangeFunction = (e) => {
+  const editContentsOnChangeFunction = (e:React.ChangeEvent<HTMLInputElement>) => {
     setEditContents(e.target.value);
   };
 
@@ -58,7 +66,12 @@ const TodoUpdateDeleteFormDetails = ({
   //     editTodoFunction();
   // };
 
-  const sendContentsForEdit = {
+  interface sendContentsForEditProps {
+    todo: string,
+    isCompleted: boolean
+  }
+
+  const sendContentsForEdit:sendContentsForEditProps = {
     todo: `${editContents}`,
     isCompleted: !isDone, // 느낌표를 제거하면 할일 완료 체크 후 새로고침하면 업데이트가 안되는 현상이 일어난다.
   };

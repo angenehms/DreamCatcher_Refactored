@@ -3,10 +3,14 @@ import { sendForAddTodoFunction } from "../../api/Auth";
 import { Button, TextField, Grid } from "@mui/material";
 import DreamCatcherButtonImg from "../../img/DreamCatcherButtonImg/DreamCatcherButtonImg.png";
 
-const TodoCreateForm = ({ readTodoFunction }) => {
+interface ReadTodoFuc {
+  readTodoFunction: () => void
+}
+
+const TodoCreateForm = ({ readTodoFunction }:ReadTodoFuc) => {
   const [addTodoInputValue, setAddTodoInputValue] = useState(""); // 투두 추가
 
-  const changeAddTodoValue = (e) => {
+  const changeAddTodoValue = (e:React.ChangeEvent<HTMLInputElement>) => {
     // 투두 추가 인풋값 변경함수
     setAddTodoInputValue(e.target.value);
     // console.log(addTodoInputValue);

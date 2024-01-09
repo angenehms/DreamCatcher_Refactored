@@ -9,10 +9,10 @@ import { useSignupInput } from "../../hook/useSignupInput";
 const SignupForm = () => {
   const navigate = useNavigate();
   const [identification, identificationChangeFunction, identificationValidity] =
-    useSignupInput("");
+    useSignupInput();
   const [password, passwordChangeFunction, passwordValidity] =
-    useSignupInput("");
-  const [passwordCheck, passwordCheckChangeFunction] = useSignupInput("");
+    useSignupInput();
+  const [passwordCheck, passwordCheckChangeFunction] = useSignupInput();
   // 배열의 두번째 인덱스인 함수들은 사실 똑같은 역할을 하지만 이름만 다르다고 생각한다! 그럼 왜 굳이 이름을 다르게 하는걸까? 왜냐면 의미는 같지만 두번 선언할 수 없게 되어있다. 이름을 갖게하면 에러가 뜬다.
 
   const passwordCheckValidity = () => {
@@ -28,11 +28,11 @@ const SignupForm = () => {
     password: `${password}`,
   };
 
-  const signupFunction = async (e) => {
+  const signupFunction = async (e:React.MouseEvent<HTMLButtonElement>) => {
     // 회원가입 시켜주는 함수 그후 signin 페이지 이동
     e.preventDefault();
     const res = await sendForSignupFunction(sendContentsForSignup); // res 를 {status} 로 구조분해할당 가능
-    if (res.status === 201) {
+    if (res?.status === 201) {
       // res.status 로 쓴 부분을 위에서 구조분해할당 했다면 status 로 받기 가능
       navigate("/signin");
     }

@@ -2,7 +2,19 @@ import React from "react";
 import TodoUpdateDeleteFormDetails from "../TodoUpdateDeleteFormDetails/TodoUpdateDeleteFormDetails";
 import { DreamCatcherListWrap } from "./TodoUpdateDeleteFormStyle";
 
-const TodoUpdateDeleteForm = ({ todoListInfo, readTodoFunction }) => {
+interface IndividualList {
+  id: number;
+  isCompleted: boolean;
+  todo: string;
+  userId: number;
+}
+
+interface TodoUpdateDeleteFormProps {
+  todoListInfo: IndividualList[],
+  readTodoFunction: () => void
+}
+
+const TodoUpdateDeleteForm = ({ todoListInfo, readTodoFunction }:TodoUpdateDeleteFormProps)=> {
   return (
     <>
       <DreamCatcherListWrap>
